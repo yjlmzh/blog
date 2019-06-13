@@ -42,9 +42,7 @@ public class CommentServiceImpl implements ICommentService {
         if (StringUtils.isBlank(comments.getAuthor())) {
             comments.setAuthor("热心网友");
         }
-        if (StringUtils.isNotBlank(comments.getMail()) && !TaleUtils.isEmail(comments.getMail())) {
-            throw new TipException("请输入正确的邮箱格式");
-        }
+
         if (StringUtils.isBlank(comments.getContent())) {
             throw new TipException("评论内容不能为空");
         }

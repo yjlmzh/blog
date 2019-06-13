@@ -182,13 +182,7 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail("姓名过长");
         }
 
-        if (StringUtils.isNotBlank(mail) && !TaleUtils.isEmail(mail)) {
-            return RestResponseBo.fail("请输入正确的邮箱格式");
-        }
 
-        if (StringUtils.isNotBlank(url) && !PatternKit.isURL(url)) {
-            return RestResponseBo.fail("请输入正确的URL格式");
-        }
 
         if (text.length() > 200) {
             return RestResponseBo.fail("请输入200个字符以内的评论");
@@ -289,6 +283,13 @@ public class IndexController extends BaseController {
         request.setAttribute("links", links);
         return this.render("links");
     }
+    @GetMapping(value = "links2")
+    public String links2(HttpServletRequest request) {
+        List<MetaVo> links = metaService.getMetas(Types.LINK.getType());
+        request.setAttribute("links2", links);
+        return this.render("links2");
+    }
+
 
     /**
      * 自定义页面,如关于的页面
