@@ -6,11 +6,11 @@
     <div id="post-content" class="post-content">
         <h3>友情</h3>
         <ul class="flinks">
-            <th:block th:each="link : ${links2}">
+            <th:block th:each="link : ${links}">
                 <li>🔒 <a th:href="${link.slug}" target="_blank" th:text="${link.name}"></a></li>
             </th:block>
         </ul>
-        <h3>须知</h3>
+        <h3>链接</h3>
         <blockquote>
             <ul>
                 <li><p>请确定贵站可以稳定运营</p></li>
@@ -19,7 +19,10 @@
             </ul>
         </blockquote>
         <h3>基本信息</h3>
+        <pre><code class="lang-md hljs markdown">
+            hahah</code></pre>
 
+       </div>
 </article>
 </body>
 <div th:replace="themes/default/footer::footer"></div>
